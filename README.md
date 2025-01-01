@@ -60,4 +60,4 @@ The following search algorithms are supported:
 
 
 ## Disclaimer
-This project was done for an assignment.
+This project was originally completed as an assignment and has been uploaded to GitHub at a later date due to limited OneDrive storage. As a result, the commit history may not accurately reflect the development process, and there may be only a few commits for the project.
