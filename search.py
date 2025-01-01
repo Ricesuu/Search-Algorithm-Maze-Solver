@@ -24,7 +24,7 @@ SEARCH_METHODS = {
 }
 
 def convertPathToMoves(path):
-    """Convert a path to a list of moves"""
+    # Convert a path to a list of moves
     moves = []
     for i in range(1, len(path)):
         curr_x, curr_y = path[i-1]
@@ -42,7 +42,7 @@ def convertPathToMoves(path):
     return moves
 
 def printMazeOnly(filename):
-    """Print only the maze structure from the file"""
+    # Print only the maze structure from the file
     try:
         if not os.path.isfile(filename):
             filename = os.path.join('test_cases', filename)
@@ -57,7 +57,7 @@ def printMazeOnly(filename):
         raise Exception(f"Error parsing file: {str(e)}")
 
 def printDetailedOutput(grid, method, found, path, nodes_explored, visited_order, time_taken_ms):
-    """Print detailed output for debugging and verification"""
+    # Print detailed output for debugging and verification
     print("\n--- To Check ---")
     print(f"\nGrid after {SEARCH_METHODS[method][2]} search:")
     grid.display()
@@ -70,7 +70,7 @@ def printDetailedOutput(grid, method, found, path, nodes_explored, visited_order
         print("\n--------------------------------")
 
 def runSearch(filename, method, beam_width=2):
-    """Run the specified search method on the given maze file"""
+    # Run the specified search method on the given maze file
     # Validate search method
     if method not in SEARCH_METHODS:
         raise ValueError(
@@ -127,7 +127,7 @@ def runSearch(filename, method, beam_width=2):
     )
 
 def printUsage():
-    """Print usage instructions"""
+    # Print usage instructions
     print("Usage:")
     print("1. Regular mode: python search.py <filename> <method> [beam_width]")
     print("2. Test mode: python search.py --test")

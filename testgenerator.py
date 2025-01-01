@@ -11,14 +11,14 @@ class TestGenerator:
             os.makedirs(self.test_cases_dir)
 
     def createTestFile(self, filename, content):
-        """Create a test file with given content"""
+        # Create a test file with given content
         filepath = os.path.join(self.test_cases_dir, filename)
         with open(filepath, 'w') as f:
             f.write(content)
         return filepath
 
     def generateRandomMaze(self, rows, cols, difficulty='medium'):
-        """Generate a random maze with guaranteed path using recursive backtracking"""
+        # Generate a random maze with guaranteed path using recursive backtracking
         max_attempts = 10
         for attempt in range(max_attempts):
             # Initialize grid with all walls
@@ -61,7 +61,7 @@ class TestGenerator:
         return self._createSimpleMaze(rows, cols, difficulty)
 
     def _getMinRequiredDistance(self, rows, cols, difficulty):
-        """Calculate minimum required distance based on maze size and difficulty"""
+        # Calculate minimum required distance based on maze size and difficulty
         base_distance = (rows + cols) // 4  # Base minimum distance
         
         if difficulty == 'medium':
@@ -72,7 +72,7 @@ class TestGenerator:
             return base_distance * 2
 
     def _generateMazePaths(self, grid, x, y):
-        """Generate maze paths using recursive backtracking"""
+        # Generate maze paths using recursive backtracking
         rows, cols = len(grid), len(grid[0])
         directions = [(0, 2), (2, 0), (0, -2), (-2, 0)]
         random.shuffle(directions)
@@ -89,7 +89,7 @@ class TestGenerator:
                 self._generateMazePaths(grid, new_x, new_y)
 
     def _findValidDistantGoal(self, grid, start, min_distance):
-        """Find a valid goal point that's sufficiently far from start"""
+        # Find a valid goal point that's sufficiently far from start
         rows, cols = len(grid), len(grid[0])
         distances = {}
         queue = deque([(start, 0)])
@@ -126,7 +126,7 @@ class TestGenerator:
         return None
 
     def _addRandomWalls(self, grid, start, goal, density, maintain_path=True):
-        """Add random walls while optionally maintaining path"""
+        # Add random walls while optionally maintaining path
         rows, cols = len(grid), len(grid[0])
         num_walls = int(rows * cols * density)
         added_walls = 0
@@ -155,7 +155,7 @@ class TestGenerator:
                     added_walls += 1
 
     def _pathExists(self, grid, start, goal):
-        """Check if a path exists between start and goal"""
+        # Check if a path exists between start and goal
         rows, cols = len(grid), len(grid[0])
         visited = set()
         queue = deque([start])
@@ -179,7 +179,7 @@ class TestGenerator:
         return False
 
     def _createSimpleMaze(self, rows, cols, difficulty):
-        """Create a simple maze with guaranteed path as fallback"""
+        # Create a simple maze with guaranteed path as fallback
         grid = [[0 for _ in range(cols)] for _ in range(rows)]
         start = (0, 0)
         goal = (cols-1, rows-1)
@@ -197,7 +197,7 @@ class TestGenerator:
         return start, goal, walls
 
     def _convertToWalls(self, grid):
-        """Convert grid representation to wall list representation"""
+        # Convert grid representation to wall list representation
         rows, cols = len(grid), len(grid[0])
         walls = []
         visited = set()
@@ -232,20 +232,20 @@ class TestGenerator:
         return walls
 
     def generateHardcodedTests(self):
-        """Generate the original 5 hardcoded test cases"""
+        # Generate the original 5 hardcoded test cases
         test_files = {
-            'test1.txt': """[5,5]\n[0,0]\n[4,4]\n""",  # Simple straight line
-            'test2.txt': """[8,8]\n[0,0]\n[5,7]|[7,2]\n[1,1,2,2]\n[5,1,2,2]\n[1,5,2,2]""",  # Multiple goals
-            'test3.txt': """[4,4]\n[0,0]\n[3,3]\n[1,1,3,2]\n[0,3,4,1]""",  # No solution
-            'test4.txt': """[7,7]\n[0,0]\n[6,6]\n[2,0,1,5]\n[4,2,1,5]""",  # Narrow passage
-            'test5.txt': """[10,10]\n[0,0]\n[9,9]\n[2,2,2,2]\n[6,2,2,2]\n[2,6,2,2]\n[6,6,2,2]\n[4,4,2,2]\n[0,4,1,2]\n[9,4,1,2]"""  # Complex maze
+            'test1.txt': "[5,5]\n[0,0]\n[4,4]\n",  # Simple straight line
+            'test2.txt': "[8,8]\n[0,0]\n[5,7]|[7,2]\n[1,1,2,2]\n[5,1,2,2]\n[1,5,2,2]",  # Multiple goals
+            'test3.txt': "[4,4]\n[0,0]\n[3,3]\n[1,1,3,2]\n[0,3,4,1]",  # No solution
+            'test4.txt': "[7,7]\n[0,0]\n[6,6]\n[2,0,1,5]\n[4,2,1,5]",  # Narrow passage
+            'test5.txt': "[10,10]\n[0,0]\n[9,9]\n[2,2,2,2]\n[6,2,2,2]\n[2,6,2,2]\n[6,6,2,2]\n[4,4,2,2]\n[0,4,1,2]\n[9,4,1,2]"  # Complex maze
         }
 
         for name, content in test_files.items():
             self.createTestFile(name, content)
 
     def generateAllTests(self):
-        """Generate all test cases"""
+        # Generate all test cases
         # Generate tests 1-5 (hardcoded)
         self.generateHardcodedTests()
 
@@ -283,7 +283,7 @@ class TestGenerator:
             self.createTestFile(filename, content)
 
     def runTestSuite(self):
-        """Generate and run all test cases"""
+        # Generate and run all test cases
         print("Generating test cases...")
         self.generateAllTests()
         

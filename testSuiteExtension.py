@@ -31,7 +31,7 @@ class TestSuiteExtension:
         }
         
     def runTestSuite(self):
-        """Execute the complete test suite"""
+        # Execute the complete test suite
         print("\n" + "="*50)
         print("Starting Search Algorithm Test Suite")
         print("="*50)
@@ -62,13 +62,13 @@ class TestSuiteExtension:
         return True
 
     def generateTests(self):
-        """Generate all test cases"""
+        # Generate all test cases
         print("Generating test cases...")
         self.generator.generateAllTests()  # Using the new combined test generation method
         print("Test cases generated successfully.")
 
     def runTests(self):
-        """Run all tests for each search method"""
+        # Run all tests for each search method
         # Initialize results
         for method in self.search_methods.keys():
             self.results[method] = []
@@ -107,7 +107,7 @@ class TestSuiteExtension:
                 self.updateSummary(method, result)
 
     def runSingleTest(self, test_file, method):
-        """Run a single test and return results"""
+        # Run a single test and return results
         result = {
             'test_name': test_file,
             'method': method,
@@ -165,7 +165,7 @@ class TestSuiteExtension:
         return result
 
     def updateSummary(self, method, result):
-        """Update summary statistics for a method"""
+        # Update summary statistics for a method
         self.summary[method]['total_tests'] += 1
         
         if result['status'] == 'PASSED':
@@ -185,7 +185,7 @@ class TestSuiteExtension:
                 self.summary[method]['avg_path_length'] = mean(path_lengths)
 
     def generateReport(self):
-        """Generate and print the test report"""
+        # Generate and print the test report
         print("\n" + "="*80)
         print("SEARCH ALGORITHM TEST REPORT")
         print("="*80)
@@ -264,7 +264,7 @@ class TestSuiteExtension:
             print("Note: Tests 13-14 may be intentionally unsolvable for extreme difficulty.")
 
     def exportToExcel(self, summary_data, performance_data, summary_headers, perf_headers):
-        """Export the results tables to an Excel file"""
+        # Export the results tables to an Excel file
         # Create Excel writer object
         excel_file = 'SearchResultsPerformance.xlsx'
         with pd.ExcelWriter(excel_file, engine='openpyxl') as writer:

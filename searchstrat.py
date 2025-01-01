@@ -16,7 +16,6 @@ class Search:
 
     # Check if position is within bounds, unvisited, and not a wall
     def isValidMove(self, x, y):
-        
         return (0 <= x < self.grid.cols and 
                 0 <= y < self.grid.rows and 
                 (x, y) not in self.visited and 
@@ -52,7 +51,6 @@ class Search:
 
     # Calculate Manhattan distance between current position and goal
     def calculateHeuristic(self, current, goal):
-        
         x1, y1 = current
         x2, y2 = goal
         return abs(x1 - x2) + abs(y1 - y2)
@@ -220,7 +218,7 @@ class GreedyBestFirstSearch(Search):
         return False, []
 
 
-#Custom Searches
+# Custom Searches
 # Bidirectional BFS search 
 class BidirectionalSearch(BreadthFirstSearch):
     def __init__(self, grid):
