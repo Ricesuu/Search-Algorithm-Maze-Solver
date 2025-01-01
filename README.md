@@ -61,22 +61,22 @@ The following search algorithms are supported:
 ## Screenshots of Application Output
 ### 1. Program Run Example
 <p align="left">
-  <img src="https://github.com/user-attachments/assets/437d60bc-2587-4182-adf1-727cb12fbb90" alt="Program Run Example" width="500px">
+  <img src="https://github.com/user-attachments/assets/51f2382e-75ce-41df-98c6-e636ab99f9cf" alt="Program Run Example" width="500px">
 </p>
 
 ### 2. Maze Print Example
 <p align="left">
-  <img src="https://github.com/user-attachments/assets/42528f71-ff8d-47fc-9c0c-6e12d1a86642" alt="Maze Print Example" width="500px">
+  <img src="https://github.com/user-attachments/assets/43c4ba30-eb5c-43e3-9b73-ba8918ca54eb" alt="Maze Print Example" width="500px">
 </p>
 
 ### 3. Beam Search Output
 <p align="left">
-  <img src="https://github.com/user-attachments/assets/3f873560-3244-40b4-bd31-a1d97471b886" alt="Beam Search Output" width="500px">
+  <img src="https://github.com/user-attachments/assets/8464d535-06f4-4759-8944-07ea79dc55c5" alt="Beam Search Output" width="500px">
 </p>
 
 ### 4. Program Test Example
 <p align="left">
-  <img src="https://github.com/user-attachments/assets/c61f43cc-ba8f-4642-b172-026ccf78d5a3" alt="Program Test Example" width="500px">
+  <img src="https://github.com/user-attachments/assets/c60106ef-765c-4050-be53-171a8814fdad" alt="Program Test Example" width="500px">
 </p>
 
 ## Disclaimer
