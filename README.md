@@ -1,4 +1,4 @@
-# Search-Algorithm-Maze-Solver
+# Search Algorithm Maze Solver
 A program that uses different search algorithms to solve a CLI maze. The tool is flexible and supports testing and visualisation of the maze.
 
 ## Usage
